@@ -73,40 +73,27 @@ export default async function PaperDetail(props: PageProps) {
               ))}
             </div>
           )}
-        </div>
-      </section>
 
-      <section>
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
           {paper.url && (
-            <div className="mb-6">
+            <div className="mt-6">
               <a
                 href={paper.url}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-md bg-primary text-primary-foreground px-4 py-2 text-sm font-medium hover:opacity-90"
               >
-                Read paper
+                Read paper 
               </a>
             </div>
           )}
+        </div>
+      </section>
 
+      <section>
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
           <div className="space-y-4 leading-7">
             {isSocialHarm ? (
               <>
-                <p className="text-foreground/90">
-                  {firstSentences(paper.summary, 3)}...{" "}
-                  {paper.url && (
-                    <a
-                      href={paper.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="underline underline-offset-2 font-semibold"
-                    >
-                      continue reading
-                    </a>
-                  )}
-                </p>
                 <h2 className="mt-6 text-xl font-medium">Summary</h2>
                 <div className="mt-3">
                   <img

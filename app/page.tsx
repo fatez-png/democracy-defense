@@ -184,7 +184,9 @@ export default function Home() {
                       </Link>
                     </h3>
                     <p className="mt-2 text-sm text-foreground/70 line-clamp-4">
-                      {featured.summary}
+                      {featured.slug === "socialharmbench-llm-vulnerabilities"
+                        ? "Large language models (LLMs) are increasingly used in sensitive sociopolitical contexts, yet existing safety benchmarks overlook evaluating risks like assisting surveillance, political manipulation, and generating disinformation. To counter this, we introduce SocialHarmBench – the first sociopolitical adversarial evaluation benchmark, with 585 prompts across 7 domains and 34 countries. Results show open-weight models are highly vulnerable, exhibiting 97-98% attack success rates in areas such as historical revisionism, propaganda, and political manipulation. Vulnerabilities are greatest in 21st-and pre-20th-century contexts and regions like Latin America, the USA, and the UK, revealing that current LLM safeguards fail to generalize in sociopolitical settings and may endanger democratic values and human rights."
+                        : featured.summary}
                     </p>
                     <p className="mt-3 text-sm text-foreground/60">{featured.authors.join(", ")}</p>
                     {featured.tags && (
@@ -210,7 +212,7 @@ export default function Home() {
                           rel="noopener noreferrer"
                           className="inline-flex items-center gap-2 rounded-md bg-primary text-primary-foreground px-3 py-2 text-sm hover:opacity-90"
                         >
-                          Read paper <span aria-hidden>?</span>
+                          Read paper 
                         </a>
                       )}
                     </div>

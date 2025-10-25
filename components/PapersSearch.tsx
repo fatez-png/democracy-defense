@@ -131,7 +131,12 @@ export default function PapersSearch({ papers }: Props) {
               No papers match your search.
             </div>
           ) : (
-            filtered.map((paper) => (
+            filtered.map((paper) => {
+              const displaySummary =
+                paper.slug === "socialharmbench-llm-vulnerabilities"
+                  ? "Large language models (LLMs) are increasingly used in sensitive sociopolitical contexts, yet existing safety benchmarks overlook evaluating risks like assisting surveillance, political manipulation, and generating disinformation. To counter this, we introduce SocialHarmBench – the first sociopolitical adversarial evaluation benchmark, with 585 prompts across 7 domains and 34 countries. Results show open-weight models are highly vulnerable, exhibiting 97-98% attack success rates in areas such as historical revisionism, propaganda, and political manipulation. Vulnerabilities are greatest in 21st-and pre-20th-century contexts and regions like Latin America, the USA, and the UK, revealing that current LLM safeguards fail to generalize in sociopolitical settings and may endanger democratic values and human rights."
+                  : paper.summary;
+              return (
               <article
                 key={paper.slug}
                 className="group rounded-lg border border-black/10 dark:border-white/10 p-5 hover:shadow-sm transition-shadow bg-background hover-lift"
@@ -149,7 +154,7 @@ export default function PapersSearch({ papers }: Props) {
                   <Link href={`/papers/${paper.slug}`}>{paper.title}</Link>
                 </h2>
                 <p className="mt-2 text-sm text-foreground/70 line-clamp-3">
-                  {paper.summary}
+                  {displaySummary}
                 </p>
                 <p className="mt-3 text-sm text-foreground/60">
                   {paper.authors.join(", ")}
@@ -179,7 +184,8 @@ export default function PapersSearch({ papers }: Props) {
                   </div>
                 )}
               </article>
-            ))
+              );
+            })
           )}
         </div>
       </div>

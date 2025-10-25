@@ -8,6 +8,11 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-primary: #37505c;
+  --color-primary-foreground: #ffffff;
+  --color-muted: #dcdee6;
+  --color-surface: #ebebf0;
+  --color-deep: #1c2930;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -22,5 +27,49 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system,
+    Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+/* Soft animated gradient for hero title */
+@keyframes heroShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.hero-title {
+  background-image: linear-gradient(90deg, #37505c, #1c2930, #37505c);
+  background-size: 200% 200%;
+  animation: heroShift 12s ease-in-out infinite;
+}
+
+/* Subtle site-wide motion utilities */
+:root { --ease-smooth: cubic-bezier(.22,.61,.36,1); }
+
+@keyframes floatSoft {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-2px); }
+}
+
+.hover-lift {
+  transition: transform .25s var(--ease-smooth), box-shadow .25s var(--ease-smooth);
+}
+.hover-lift:hover { transform: translateY(-2px); }
+
+/* Reveal on scroll */
+.reveal { opacity: 0; transform: translateY(10px); transition: opacity .6s var(--ease-smooth), transform .6s var(--ease-smooth); }
+.reveal.is-visible { opacity: 1; transform: none; }
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .hero-title { animation: none; }
+  .hover-lift, .reveal { transition: none; }
+  .reveal { opacity: 1; transform: none; }
 }

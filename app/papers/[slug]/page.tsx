@@ -24,6 +24,18 @@ export default async function PaperDetail(props: PageProps) {
   const paper = getPaperBySlug(slug);
   if (!paper) notFound();
 
+  const isSocialHarm = slug === "socialharmbench-llm-vulnerabilities";
+  const socialHarmSummary =
+    "Large language models (LLMs) are increasingly used in sensitive sociopolitical contexts, yet existing safety benchmarks overlook evaluating risks like assisting surveillance, political manipulation, and generating disinformation. To counter this, we introduce SocialHarmBench – the first sociopolitical adversarial evaluation benchmark, with 585 prompts across 7 domains and 34 countries. Results show open-weight models are highly vulnerable, exhibiting 97-98% attack success rates in areas such as historical revisionism, propaganda, and political manipulation. Vulnerabilities are greatest in 21st-and pre-20th-century contexts and regions like Latin America, the USA, and the UK, revealing that current LLM safeguards fail to generalize in sociopolitical settings and may endanger democratic values and human rights.";
+
+  function firstSentences(text: string, count: number): string {
+    const parts = text
+      .replace(/\n+/g, " ")
+      .split(/(?<=\.)\s+/)
+      .filter(Boolean);
+    return parts.slice(0, count).join(" ");
+  }
+
   return (
     <>
       <section className="relative overflow-hidden bg-surface">
@@ -80,15 +92,43 @@ export default async function PaperDetail(props: PageProps) {
           )}
 
           <div className="space-y-4 leading-7">
-            <p className="text-foreground/90 whitespace-pre-line">{paper.summary}</p>
-            <p className="text-foreground/70">
-              Full paper content coming soon. This page will host the abstract,
-              key findings, figures, and links to PDF/data.
-            </p>
+            {isSocialHarm ? (
+              <>
+                <p className="text-foreground/90">
+                  {firstSentences(paper.summary, 3)}...{" "}
+                  {paper.url && (
+                    <a
+                      href={paper.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline underline-offset-2 font-semibold"
+                    >
+                      continue reading
+                    </a>
+                  )}
+                </p>
+                <h2 className="mt-6 text-xl font-medium">Summary</h2>
+                <div className="mt-3">
+                  <img
+                    src="/social-harm.jpg"
+                    alt="SocialHarmBench illustrative figure"
+                    className="w-full max-h-[420px] object-cover rounded-lg border border-black/10 dark:border-white/10"
+                  />
+                </div>
+                <p className="mt-4 text-foreground/90 whitespace-pre-line">{socialHarmSummary}</p>
+              </>
+            ) : (
+              <>
+                <p className="text-foreground/90 whitespace-pre-line">{paper.summary}</p>
+                <p className="text-foreground/70">
+                  Full paper content coming soon. This page will host the abstract,
+                  key findings, figures, and links to PDF/data.
+                </p>
+              </>
+            )}
           </div>
         </div>
       </section>
     </>
   );
 }
-

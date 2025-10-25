@@ -62,7 +62,6 @@ export default async function PaperDetail(props: PageProps) {
             className="inline-flex items-center gap-2 rounded-md bg-primary text-primary-foreground px-4 py-2 text-sm font-medium hover:opacity-90"
           >
             Read paper
-            <span aria-hidden>↗</span>
           </a>
         </div>
       )}

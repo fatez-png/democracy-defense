@@ -21,8 +21,15 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    /* ensure surfaces remain dark in dark mode so light text is readable */
+    --color-surface: #12181d; /* dark slate */
+    --color-muted: #1a232a;   /* muted dark panel */
   }
 }
+
+/* Explicit theme overrides via data-theme attribute */
+
+
 
 body {
   background: var(--background);
@@ -73,3 +80,4 @@ body {
   .hover-lift, .reveal { transition: none; }
   .reveal { opacity: 1; transform: none; }
 }
+

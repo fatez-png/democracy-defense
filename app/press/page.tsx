@@ -31,7 +31,17 @@ export default function PressPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
             <h2 className="text-xl font-medium">Media Contact</h2>
-            <div className="mt-2 text-sm text-foreground/80">
+            <div className="mt-3 flex items-center gap-3">
+              <a href="https://zhijing-jin.com/home/" target="_blank" rel="noopener noreferrer" className="shrink-0">
+                <img src="/zhijing_pic.jpg" alt="Zhijing Jin" className="h-10 w-10 rounded-full object-cover ring-1 ring-black/10 dark:ring-white/10" />
+              </a>
+              <div className="text-sm">
+                <a href="https://zhijing-jin.com/home/" target="_blank" rel="noopener noreferrer" className="font-medium hover:underline">Zhijing Jin</a>
+                <div className="text-foreground/70">Founder & Head, Jinesis AI Lab</div>
+                <div><a href="mailto:zjin.admin@cs.toronto.edu" className="hover:underline">zjin.admin@cs.toronto.edu</a></div>
+              </div>
+            </div>
+            <div className="mt-3 text-sm text-foreground/80">
               <p>press@democracydefense.org</p>
               <p className="mt-1">+1 (555) 123-4567</p>
             </div>

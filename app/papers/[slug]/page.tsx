@@ -26,6 +26,7 @@ export default async function PaperDetail(props: PageProps) {
 
   const isSocialHarm = slug === "socialharmbench-llm-vulnerabilities";
   const isHistorical = slug === "preserving-historical-truth-revisionism-llms";
+  const isAuthoritarian = slug === "democratic-or-authoritarian-bias-in-llms";
   const socialHarmSummary = `Large language models (LLMs) are increasingly used in sensitive sociopolitical contexts, yet existing safety benchmarks overlook evaluating risks like assisting surveillance, political manipulation, and generating disinformation. To counter this, we introduce SocialHarmBench � the first sociopolitical adversarial evaluation benchmark, with 585 prompts across 7 domains and 34 countries. Results show open-weight models are highly vulnerable, exhibiting 97-98% attack success rates in areas such as historical revisionism, propaganda, and political manipulation. Vulnerabilities are greatest in 21st-and pre-20th-century contexts and regions like Latin America, the USA, and the UK, revealing that current LLM safeguards fail to generalize in sociopolitical settings and may endanger democratic values and human rights.`;
 
   return (
@@ -97,6 +98,18 @@ export default async function PaperDetail(props: PageProps) {
             </div>
             <p className="mt-4 text-foreground/90 whitespace-pre-line">{paper.summary}</p>
           </>
+        ) : isAuthoritarian ? (
+          <>
+            <h2 className="text-xl font-medium">Abstract</h2>
+            <div className="mt-3">
+              <img
+                src="/authoritarian.jpg"
+                alt="Authoritarian bias paper illustrative figure"
+                className="w-full h-auto object-contain border border-black/10 dark:border-white/10"
+              />
+            </div>
+            <p className="mt-4 text-foreground/90 whitespace-pre-line">{paper.summary}</p>
+          </>
         ) : (
           <>
             <p className="text-foreground/90 whitespace-pre-line">{paper.summary}</p>
@@ -107,4 +120,3 @@ export default async function PaperDetail(props: PageProps) {
     </div>
   );
 }
-

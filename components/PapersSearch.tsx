@@ -159,7 +159,7 @@ export default function PapersSearch({ papers }: Props) {
                 <p className="mt-3 text-sm text-foreground/60">
                   {paper.authors.join(", ")}
                 </p>
-                {paper.url && (
+                {paper.url ? (
                   <div className="mt-3">
                     <a
                       href={paper.url}
@@ -169,6 +169,10 @@ export default function PapersSearch({ papers }: Props) {
                     >
                       Read paper <span aria-hidden>↗</span>
                     </a>
+                  </div>
+                ) : (
+                  <div className="mt-3 inline-flex items-center gap-1 rounded border border-red-500/40 text-red-600 px-2 py-1 text-[11px]">
+                    Paper coming soon
                   </div>
                 )}
                 {paper.tags && (

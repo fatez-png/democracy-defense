@@ -47,7 +47,7 @@ export default function HomePage() {
               href="/papers"
               className="inline-flex items-center gap-2 rounded-md bg-primary text-primary-foreground px-5 py-3 text-sm font-medium hover:opacity-90"
             >
-              Explore Papers <span aria-hidden>→</span>
+              Explore Papers →
             </Link>
             <Link
               href="/press"
@@ -64,25 +64,65 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Partners & Funders */}
+      {/* Partners & Funders (commented out old carousel)
       <section className="border-t border-black/10 dark:border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
           <h2 className="text-2xl font-semibold tracking-tight">Our Partners & Funders</h2>
           <p className="mt-2 text-foreground/70 max-w-3xl">
             We are grateful to our partners and funders for supporting research that strengthens democratic resilience and accountability.
           </p>
-
           <div className="mt-6">
-            <PartnersCarousel
-              items={[
-                { src: "/vector.png", alt: "Vector Institute" },
-                { src: "/mpi.png", alt: "Max Planck Institute" },
-                { src: "/uoft.png", alt: "University of Toronto" },
-                { src: "/canssi.png", alt: "CANSSI" },
-                { src: "/cooperative_ai.png", alt: "Cooperative AI" },
-                { src: "/schmidtsciences.png", alt: "Schmidt Futures" },
-              ]}
-            />
+            <PartnersCarousel items={[]} />
+          </div>
+        </div>
+      </section>
+      */}
+
+      {/* Partners + News side-by-side */}
+      <section className="border-t border-black/10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+            <div>
+              <h2 className="text-2xl font-semibold tracking-tight">News</h2>
+              <ul className="mt-4 grid grid-cols-1 gap-3">
+                <Reveal>
+                  <li className="rounded-lg border border-black/10 p-4 hover-lift">
+                    <img src="/social-harm.jpg" alt="SocialHarmBench figure" className="w-full h-32 object-cover rounded mb-2" />
+                    New paper: SocialHarmBench preprint released - <a className="underline" href="/papers/socialharmbench-llm-vulnerabilities">read more</a>
+                  </li>
+                </Reveal>
+                <Reveal delayMs={100}>
+                  <li className="rounded-lg border border-black/10 p-4 hover-lift">
+                    <img src="/ccmoderation.png" alt="Cross-Country Moderation figure" className="w-full h-32 object-cover rounded mb-2" />
+                    Updated: Cross-Country Moderation analysis with expanded explanations - <a className="underline" href="/papers/cross-country-content-moderation-nlp">details</a>
+                  </li>
+                </Reveal>
+              </ul>
+            </div>
+            <div>
+              <h2 className="text-2xl font-semibold tracking-tight">Our Partners</h2>
+              <div className="mt-4 rounded-lg border border-black/10 dark:border-white/10 bg-muted/40 p-6">
+                <div className="text-xs uppercase tracking-wide text-foreground/60">
+                  <span className="inline-flex items-center rounded-full bg-foreground/10 px-2 py-0.5">Academic Partner</span>
+                </div>
+                <div className="mt-4 flex justify-center md:justify-start">
+                  <img
+                    src="/University-of-Michigan-Logo.png"
+                    alt="University of Michigan"
+                    className="h-20 sm:h-24 md:h-28 w-auto object-contain"
+                  />
+                </div>
+                <p className="mt-4 text-sm text-foreground/70">
+                  Collaboration on responsible AI research and evaluation methods supporting democratic resilience.
+                </p>
+                <a
+                  href="/press"
+                  className="mt-4 inline-flex items-center gap-2 rounded-md border border-primary/30 text-primary px-3 py-2 text-sm hover:bg-primary/10"
+                >
+                  Contact us to become a partner
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -96,6 +136,23 @@ export default function HomePage() {
                 <h2 className="text-2xl font-semibold tracking-tight">Featured Paper</h2>
                 <Reveal className="mt-4">
                   <article className="rounded-lg border border-black/10 dark:border-white/10 p-6 bg-background hover-lift">
+                    {(() => {
+                      const slug = featured.slug;
+                      const img = slug === "socialharmbench-llm-vulnerabilities"
+                        ? "/social-harm.jpg"
+                        : slug === "preserving-historical-truth-revisionism-llms"
+                        ? "/historical_misinfo.jpg"
+                        : slug === "democratic-or-authoritarian-bias-in-llms"
+                        ? "/authoritarian.jpg"
+                        : slug === "cross-country-content-moderation-nlp"
+                        ? "/ccmoderation.png"
+                        : slug === "llms-udhr-human-rights-evaluation"
+                        ? "/hr_pic.png"
+                        : undefined;
+                      return img ? (
+                        <img src={img} alt={featured.title} className="w-full h-32 object-cover rounded mb-3" />
+                      ) : null;
+                    })()}
                     <h3 className="text-xl font-medium">
                       <Link className="hover:underline underline-offset-4" href={`/papers/${featured.slug}`}>
                         {featured.title}
@@ -166,7 +223,7 @@ export default function HomePage() {
                       rel="noopener noreferrer"
                       className="mt-3 inline-flex items-center gap-2 rounded-md border border-primary/30 text-primary px-3 py-2 text-sm hover:bg-primary/10"
                     >
-                      Watch on YouTube <span aria-hidden>↗</span>
+                      Watch on YouTube →
                     </a>
                   </div>
                 </Reveal>
@@ -177,72 +234,15 @@ export default function HomePage() {
       )}
 
             
-      {/* Features and News */}
-      <section className="border-t border-black/10 dark:border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/*
-            <Reveal>
-              <h2 className="text-2xl font-semibold tracking-tight">Events</h2>
-              <ul className="mt-4 space-y-3">
-                <li className="rounded-lg border border-black/10 dark:border-white/10 p-4">
-                  <div className="flex items-start justify-between gap-3">
-                    <div>
-                      <div className="text-xs uppercase tracking-wide text-foreground/60">Nov 18, 2025 • Online</div>
-                      <div className="font-medium">Democracy Defense: Launch Briefing</div>
-                      <div className="text-sm text-foreground/70">Overview of our research agenda and 2025 roadmap.</div>
-                    </div>
-                    <a href="#" className="shrink-0 inline-flex items-center gap-2 rounded-md border border-primary/30 text-primary px-3 py-1.5 text-xs hover:bg-primary/10">Register</a>
-                  </div>
-                </li>
-                <li className="rounded-lg border border-black/10 dark:border-white/10 p-4">
-                  <div className="flex items-start justify-between gap-3">
-                    <div>
-                      <div className="text-xs uppercase tracking-wide text-foreground/60">Dec 05, 2025 • Hybrid</div>
-                      <div className="font-medium">Workshop: Measuring LLM Political Safety</div>
-                      <div className="text-sm text-foreground/70">Hands-on with SocialHarmBench and evaluation tips.</div>
-                    </div>
-                    <a href="#" className="shrink-0 inline-flex items-center gap-2 rounded-md border border-primary/30 text-primary px-3 py-1.5 text-xs hover:bg-primary/10">Register</a>
-                  </div>
-                </li>
-                <li className="rounded-lg border border-black/10 dark:border-white/10 p-4">
-                  <div className="flex items-start justify-between gap-3">
-                    <div>
-                      <div className="text-xs uppercase tracking-wide text-foreground/60">Jan 23, 2026 • Virtual</div>
-                      <div className="font-medium">Roundtable: Platforms, Policy, and 2026 Elections</div>
-                      <div className="text-sm text-foreground/70">A cross-sector conversation on risk mitigation.</div>
-                    </div>
-                    <a href="#" className="shrink-0 inline-flex items-center gap-2 rounded-md border border-primary/30 text-primary px-3 py-1.5 text-xs hover:bg-primary/10">RSVP</a>
-                  </div>
-                </li>
-              </ul>
-            </Reveal>
-            */}
-            <div>
-              <h2 className="text-2xl font-semibold tracking-tight">News</h2>
-              <ul className="mt-4 space-y-3">
-                <Reveal>
-                <li className="rounded-lg border border-black/10 dark:border-white/10 p-4 hover-lift">
-                  <img src="/social-harm.jpg" alt="SocialHarmBench figure" className="w-full h-32 object-cover rounded mb-2" />
-                  New paper: SocialHarmBench preprint released - <a className="underline" href="/papers/socialharmbench-llm-vulnerabilities">read more</a>
-                </li>
-                </Reveal>
-                <Reveal delayMs={100}>
-                <li className="rounded-lg border border-black/10 dark:border-white/10 p-4 hover-lift">
-                  <img src="https://picsum.photos/seed/news2/600/300" alt="News thumbnail" className="w-full h-32 object-cover rounded mb-2" />
-                  Updated: Cross-Country Moderation analysis with expanded explanations - <a className="underline" href="/papers/cross-country-content-moderation-nlp">details</a>
-                </li>
-                </Reveal>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Features and News consolidated above with Partners */}
 
       {/* Newsletter pop-up */}
       <NewsletterPop />
     </>
   );
 }
+
+
+
 
 

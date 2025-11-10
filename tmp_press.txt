@@ -48,7 +48,7 @@ export default function PressPage() {
               <div className="text-base">
                 <a href="https://vesaterra.github.io/" target="_blank" rel="noopener noreferrer" className="font-semibold hover:underline">Punya Syon Pandey</a>
                 <div className="text-foreground/80">Lab Assistant</div>
-                <div><strong><a href="mailto:ppandey@cs.toronto.edu" className="hover:underline">ppandey@cs.toronto.edu</a></strong></div>
+                <div><a href="mailto:punya.pandey@mail.utoronto.ca" className="hover:underline">punya.pandey@mail.utoronto.ca</a></div>
               </div>
             </div>
           </div>
@@ -78,6 +78,35 @@ export default function PressPage() {
               <a href="https://drive.google.com/file/d/1gv0c4vkH7CylZSMF3vJNZDBJx2ObJ_cW/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-md border border-black/10 px-3 py-2 hover:bg-foreground/5">Profile photo</a>
             </div>
           </div>
+
+          {/* <div>
+            <h2 className="text-xl font-medium">Press Materials</h2>
+            <p className="mt-2 text-sm text-foreground/70">
+              We’re a new lab — full press materials are in progress. Available now: founder information below. More
+              lab assets are coming soon.
+            </p>
+            <ul className="mt-3 text-sm list-disc pl-5 leading-7">
+              <li>
+                Founder bio:{" "}
+                <a
+                  href="https://zhijing-jin.com/home/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline underline-offset-2 hover:opacity-90"
+                >
+                  Zhijing Jin
+                </a>
+              </li>
+              <li>
+                Founder photos:
+                <div className="mt-1 ml-5 space-x-3">
+                  <a href="/zhijing_pic.jpg" className="underline underline-offset-2 hover:opacity-90">Profile photo</a>
+                  <span className="text-foreground/60">Talk photo — placeholder</span>
+                </div>
+              </li>
+            </ul>
+          </div> */}
+        </div>
       </section>
 
       <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-6">
@@ -95,25 +124,10 @@ export default function PressPage() {
           <h2 className="text-xl font-medium">Recent Coverage</h2>
           <ul className="mt-3 space-y-3 text-sm">
             <li className="border border-black/10 dark:border-white/10 rounded p-4 hover-lift">
-              (WIRED, 2025) “
-              <a href="https://www.wired.com/story/ai-social-media-users-are-not-always-a-totally-dumb-idea/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">
-                AI Social Media Users Are Not Always a Totally Dumb Idea
-              </a>
-              ”
+              Placeholder headline about a Democracy Defense report — Publication Name (2024)
             </li>
             <li className="border border-black/10 dark:border-white/10 rounded p-4 hover-lift">
-              (AXRP Podcast, 2024) “
-              <a href="https://www.youtube.com/watch?v=4K-lHz2_QGg" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">
-                Zhijing Jin on LLMs, Causality, and Multi-Agent Systems
-              </a>
-              ”
-            </li>
-            <li className="border border-black/10 dark:border-white/10 rounded p-4 hover-lift">
-              (The AI Purity Podcast, 2024) “
-              <a href="https://www.youtube.com/watch?v=SOhhxniom_w" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">
-                Zhijing Jin on Socially Responsible NLP: Education, Causal NLP, and AI Text
-              </a>
-              ”
+              Placeholder interview on platform accountability — Outlet (2024)
             </li>
           </ul>
         </Reveal>
@@ -121,4 +135,6 @@ export default function PressPage() {
     </>
   );
 }
+
+
 

@@ -28,12 +28,12 @@ export default function PressPage() {
       </section>
 
       <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-        <div>
-          <h2 className="text-2xl font-semibold">Media Contact</h2>
-          <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <div className="flex items-center gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div>
+            <h2 className="text-2xl font-semibold">Media Contact</h2>
+            <div className="mt-4 flex items-center gap-4">
               <a href="https://zhijing-jin.com/home/" target="_blank" rel="noopener noreferrer" className="shrink-0">
-                <img src="/zhijing_pic.jpg" alt="Zhijing Jin" className="h-12 w-12 rounded-full object-cover ring-1 ring-black/10" />
+                <img src="/zhijing_pic.jpg" alt="Zhijing Jin" className="h-12 w-12 rounded-full object-cover ring-1 ring-black/10 dark:ring-white/10" />
               </a>
               <div className="text-base">
                 <a href="https://zhijing-jin.com/home/" target="_blank" rel="noopener noreferrer" className="font-semibold hover:underline">Zhijing Jin</a>
@@ -41,24 +41,13 @@ export default function PressPage() {
                 <div><strong><a href="mailto:zjin.admin@cs.toronto.edu" className="hover:underline">zjin.admin@cs.toronto.edu</a></strong></div>
               </div>
             </div>
-            <div className="flex items-center gap-4">
-              <a href="https://vesaterra.github.io/" target="_blank" rel="noopener noreferrer" className="shrink-0">
-                <img src="/punya.jpg" alt="Punya Syon Pandey" className="h-12 w-12 rounded-full object-cover ring-1 ring-black/10" />
+            <div className="mt-4 flex items-center gap-4 text-sm">
+              <a href="https://bsky.app/profile/zhijingjin.bsky.social" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 hover:opacity-90" aria-label="Bluesky">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden>
+                  <path d="M12 10c1.7-4.2 5.2-7 7.2-8 0 4.5-1 6.4-2.5 8.2 2.8-.6 5.3-2 7.3-4.1-.5 3.5-2.6 5.9-5.3 7.5 2.1.2 4.4-.1 6.3-.9-1.6 2.6-4.2 4-7.4 4.5 1.4 1.2 2.5 3 2.5 5.3-2-1.2-4.2-2.7-8.1-2.7s-6.1 1.5-8.1 2.7c0-2.3 1.1-4.1 2.5-5.3-3.2-.5-5.8-1.9-7.4-4.5 1.9.8 4.2 1.1 6.3.9-2.7-1.6-4.8-4-5.3-7.5 2 2.1 4.5 3.5 7.3 4.1C5.8 8.4 4.8 6.5 4.8 2c2 1 5.5 3.8 7.2 8z"/>
+                </svg>
+                Bluesky
               </a>
-              <div className="text-base">
-                <a href="https://vesaterra.github.io/" target="_blank" rel="noopener noreferrer" className="font-semibold hover:underline">Punya Syon Pandey</a>
-                <div className="text-foreground/80">Lab Assistant</div>
-                <div><strong><a href="mailto:ppandey@cs.toronto.edu" className="hover:underline">ppandey@cs.toronto.edu</a></strong></div>
-              </div>
-            </div>
-          </div>
-          <div className="mt-4 flex items-center gap-4 text-sm">
-            <a href="https://bsky.app/profile/zhijingjin.bsky.social" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 hover:opacity-90" aria-label="Bluesky">
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden>
-                <path d="M12 2.042c2.454 2.264 4.907 4.528 7.36 6.791 1.594 1.468 2.646 1.992 3.333 1.992 1.478 0-.319 3.548-.783 4.2-1.101 1.542-3.042 3.334-4.446 4.382-1.451 1.088-2.404 1.382-3.463.47-.375-.32-.703-.71-1.001-.983-.298.273-.626.664-1.001.983-1.059.912-2.012.618-3.463-.47-1.404-1.048-3.345-2.84-4.446-4.382-.464-.652-2.261-4.2-.783-4.2.687 0 1.739-.524 3.333-1.992C7.093 6.57 9.546 4.306 12 2.042Z"/>
-              </svg>
-              Bluesky
-            </a>
               <a href="https://x.com/ZhijingJin" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 hover:opacity-90" aria-label="X (Twitter)">
                 <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden>
                   <path d="M17.5 3h3.2l-7 8.1L22 21h-6.9l-5.4-6.5L3.5 21H.3l7.5-8.6L0 3h7l5 6 5.5-6zM5.2 5l11.8 14h1.8L7 5H5.2z"/>
@@ -78,6 +67,35 @@ export default function PressPage() {
               <a href="https://drive.google.com/file/d/1gv0c4vkH7CylZSMF3vJNZDBJx2ObJ_cW/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-md border border-black/10 px-3 py-2 hover:bg-foreground/5">Profile photo</a>
             </div>
           </div>
+
+          <div>
+            <h2 className="text-xl font-medium">Press Materials</h2>
+            <p className="mt-2 text-sm text-foreground/70">
+              We’re a new lab — full press materials are in progress. Available now: founder information below. More
+              lab assets are coming soon.
+            </p>
+            <ul className="mt-3 text-sm list-disc pl-5 leading-7">
+              <li>
+                Founder bio:{" "}
+                <a
+                  href="https://zhijing-jin.com/home/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline underline-offset-2 hover:opacity-90"
+                >
+                  Zhijing Jin
+                </a>
+              </li>
+              <li>
+                Founder photos:
+                <div className="mt-1 ml-5 space-x-3">
+                  <a href="/zhijing_pic.jpg" className="underline underline-offset-2 hover:opacity-90">Profile photo</a>
+                  <span className="text-foreground/60">Talk photo — placeholder</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
       </section>
 
       <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-6">
@@ -95,25 +113,10 @@ export default function PressPage() {
           <h2 className="text-xl font-medium">Recent Coverage</h2>
           <ul className="mt-3 space-y-3 text-sm">
             <li className="border border-black/10 dark:border-white/10 rounded p-4 hover-lift">
-              (WIRED, 2025) “
-              <a href="https://www.wired.com/story/ai-social-media-users-are-not-always-a-totally-dumb-idea/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">
-                AI Social Media Users Are Not Always a Totally Dumb Idea
-              </a>
-              ”
+              Placeholder headline about a Democracy Defense report — Publication Name (2024)
             </li>
             <li className="border border-black/10 dark:border-white/10 rounded p-4 hover-lift">
-              (AXRP Podcast, 2024) “
-              <a href="https://www.youtube.com/watch?v=4K-lHz2_QGg" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">
-                Zhijing Jin on LLMs, Causality, and Multi-Agent Systems
-              </a>
-              ”
-            </li>
-            <li className="border border-black/10 dark:border-white/10 rounded p-4 hover-lift">
-              (The AI Purity Podcast, 2024) “
-              <a href="https://www.youtube.com/watch?v=SOhhxniom_w" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">
-                Zhijing Jin on Socially Responsible NLP: Education, Causal NLP, and AI Text
-              </a>
-              ”
+              Placeholder interview on platform accountability — Outlet (2024)
             </li>
           </ul>
         </Reveal>
@@ -121,4 +124,6 @@ export default function PressPage() {
     </>
   );
 }
+
+
 

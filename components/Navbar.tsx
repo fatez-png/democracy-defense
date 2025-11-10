@@ -10,11 +10,11 @@ export default function Navbar() {
         <div className="h-16 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-3 group" aria-label="Democracy Defense home">
             <Image
-              src="/jinesis-logo.png"
+              src="/uoft.png"
               alt="Jinesis AI Lab logo"
-              width={40}
-              height={40}
-              className="rounded-full border border-black/10 dark:border-white/10"
+              width={48}
+              height={48}
+              className="object-contain drop-shadow-sm"
               priority
             />
             <span className="text-xl font-semibold tracking-tight group-hover:opacity-90">

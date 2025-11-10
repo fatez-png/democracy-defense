@@ -22,11 +22,11 @@ export default function AboutPage() {
         <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
           <Reveal className="flex items-start gap-4">
             <Image
-              src="/jinesis-logo.png"
+              src="/uoft.png"
               alt="Jinesis AI Lab logo"
-              width={64}
-              height={64}
-              className="rounded-full border border-black/10 dark:border-white/10"
+              width={72}
+              height={72}
+              className="object-contain drop-shadow"
               priority
             />
             <div>
@@ -57,6 +57,7 @@ export default function AboutPage() {
             <li>Transparent benchmarks and open datasets</li>
           </ul>
         </div>
+            {/* Methods & Values commented out
             <div>
           <h2 className="text-xl font-medium">Methods & Values</h2>
           <ul className="mt-2 text-sm leading-7 text-foreground/80 space-y-1">
@@ -66,10 +67,25 @@ export default function AboutPage() {
             <li><span className="font-medium">Collaboration:</span> with academics, journalists, and civil society.</li>
           </ul>
             </div>
+            */}
+            <div>
+              <h2 className="text-xl font-medium">Partners & Press</h2>
+              <p className="mt-2 text-foreground/80">
+                We work with universities, newsrooms, and civil-society organizations
+                to turn research into impact. For media inquiries, see the Press Room
+                or contact us directly.
+              </p>
+              <div className="mt-3 text-sm">
+                <a href="/press" className="inline-flex items-center gap-2 rounded-md border border-primary/30 text-primary px-3 py-2 hover:bg-primary/10">
+                  Visit Press Room 
+                </a>
+              </div>
+            </div>
           </Reveal>
         </div>
       </section>
 
+      {/*
       <section className="py-10">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-xl font-medium">Projects & Benchmarks</h2>
@@ -93,22 +109,9 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+      */}
 
-      <section className="py-10">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-xl font-medium">Partners & Press</h2>
-          <p className="mt-2 text-foreground/80">
-            We work with universities, newsrooms, and civil-society organizations
-            to turn research into impact. For media inquiries, see the Press Room
-            or contact us directly.
-          </p>
-          <div className="mt-3 text-sm">
-            <a href="/press" className="inline-flex items-center gap-2 rounded-md border border-primary/30 text-primary px-3 py-2 hover:bg-primary/10">
-              Visit Press Room <span aria-hidden>?</span>
-            </a>
-          </div>
-        </div>
-      </section>
+      {/* Partners & Press moved up next to Mission & Focus */}
 
       <section className="py-10">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -116,28 +119,27 @@ export default function AboutPage() {
           <p className="mt-2 text-foreground/70 text-sm">A small snapshot of our growing, interdisciplinary team.</p>
           <div className="mt-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
             {[
-              { name: "Alex Kim", role: "Research Engineer", seed: "alex" },
-              { name: "Priya N.", role: "Policy Fellow", seed: "priya" },
-              { name: "Diego R.", role: "Data Scientist", seed: "diego" },
-              { name: "Liu Wei", role: "NLP Scientist", seed: "liu" },
-              { name: "Sara B.", role: "Research Assistant", seed: "sara" },
-              { name: "Omar H.", role: "Security Analyst", seed: "omar" },
-              { name: "Nora V.", role: "Comms Lead", seed: "nora" },
-              { name: "Kai T.", role: "Designer", seed: "kai" },
+              // Feature members first
+              { name: "Punya Syon Pandey", seed: "punya", src: "/punya.jpg", href: "https://vesaterra.github.io/" },
+              { name: "David Guzman", seed: "david", src: "/david.jpeg", href: "https://scholar.google.com/citations?user=2VxJWs4AAAAJ&hl=en" },
+              // Single placeholder (kept as is)
+              { name: "Alex Kim", role: "", seed: "alex" },
             ].map((m, i) => (
               <Reveal key={m.seed} delayMs={i * 60}>
                 <div className="text-center">
-                  <a href="" aria-label={m.name}>
+                  <a href={m.href ?? ""} aria-label={m.name}>
                     <img
-                      src={`https://picsum.photos/seed/${m.seed}/160/160`}
+                      src={m.src ?? `https://picsum.photos/seed/${m.seed}/160/160`}
                       alt={m.name}
                       className="mx-auto h-20 w-20 sm:h-24 sm:w-24 rounded-full object-cover ring-1 ring-black/10 dark:ring-white/10"
                     />
                   </a>
-                  <a href="" className="mt-2 block font-medium hover:underline">
+                  <a href={m.href ?? ""} className="mt-2 block font-medium hover:underline">
                     {m.name}
                   </a>
-                  <div className="text-sm text-foreground/70">{m.role}</div>
+                  {m.role && (
+                    <div className="text-sm text-foreground/70">{m.role}</div>
+                  )}
                 </div>
               </Reveal>
             ))}
@@ -149,14 +151,10 @@ export default function AboutPage() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-xl font-medium">Contact</h2>
           <p className="mt-2 text-foreground/80 text-sm">
-            For collaborations, datasets, or briefings: hello@jinesis.ai (placeholder)
+            For collaborations, datasets, or briefings: zjin.admin@cs.toronto.edu
           </p>
         </div>
       </section>
     </>
   );
 }
-
-
-
-

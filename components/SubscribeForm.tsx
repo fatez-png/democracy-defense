@@ -36,7 +36,7 @@ export default function SubscribeForm({ className }: Props) {
             if (status !== "idle") setStatus("idle");
           }}
           placeholder="you@example.com"
-          className="w-full sm:max-w-sm rounded-md border border-black/10 dark:border-white/10 bg-background px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-foreground/30"
+          className="w-full sm:flex-1 rounded-md border border-black/10 dark:border-white/10 bg-background px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-foreground/30"
           required
         />
         <button

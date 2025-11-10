@@ -3,6 +3,8 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  /* hint browsers to render built-in controls for both schemes correctly */
+  color-scheme: light dark;
 }
 
 @theme inline {
@@ -80,4 +82,13 @@ body {
   .hover-lift, .reveal { transition: none; }
   .reveal { opacity: 1; transform: none; }
 }
+
+/* Simple horizontal marquee for logos */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.marquee-wrapper { overflow: hidden; position: relative; }
+.marquee { display: inline-flex; white-space: nowrap; animation: marquee 28s linear infinite; }
+.marquee-wrapper:hover .marquee, .marquee:hover { animation-play-state: paused; }
 

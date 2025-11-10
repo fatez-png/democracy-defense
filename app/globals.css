@@ -19,15 +19,8 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-    /* ensure surfaces remain dark in dark mode so light text is readable */
-    --color-surface: #12181d; /* dark slate */
-    --color-muted: #1a232a;   /* muted dark panel */
-  }
-}
+/* Lock site to a single (light) palette regardless of OS dark mode. */
+/* If you want adaptive dark mode later, restore this block with your desired colors. */
 
 /* Explicit theme overrides via data-theme attribute */
 

@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import NewsletterPop from "@/components/NewsletterPop";
 import { papers } from "@/lib/papers";
@@ -47,7 +47,7 @@ export default function HomePage() {
               href="/papers"
               className="inline-flex items-center gap-2 rounded-md bg-primary text-primary-foreground px-5 py-3 text-sm font-medium hover:opacity-90"
             >
-              Explore Papers →
+              Explore Papers 
             </Link>
             <Link
               href="/press"
@@ -58,7 +58,7 @@ export default function HomePage() {
           </div>
 
           <div className="mx-auto mt-10 max-w-2xl rounded-xl border border-black/10 dark:border-white/10 bg-background p-4 sm:p-6 shadow-sm">
-            <h3 className="text-base sm:text-lg font-semibold">Subscribe to our newsletter</h3>
+            <h3 className="text-base sm:text-lg font-semibold">Subscribe to our newsletter<span className="text-red-500 ml-2" style={{ fontFamily: '"Brush Script MT", "Lucida Handwriting", cursive' }}>coming soon</span></h3>
             <SubscribeForm className="mt-3" />
           </div>
         </div>
@@ -160,7 +160,7 @@ export default function HomePage() {
                     </h3>
                     <p className="mt-2 text-sm text-foreground/70 line-clamp-4">
                       {featured.slug === "socialharmbench-llm-vulnerabilities"
-                        ? "Large language models (LLMs) are increasingly used in sensitive sociopolitical contexts, yet existing safety benchmarks overlook evaluating risks like assisting surveillance, political manipulation, and generating disinformation. To counter this, we introduce SocialHarmBench – the first sociopolitical adversarial evaluation benchmark, with 585 prompts across 7 domains and 34 countries. Results show open-weight models are highly vulnerable, exhibiting 97-98% attack success rates in areas such as historical revisionism, propaganda, and political manipulation. Vulnerabilities are greatest in 21st-and pre-20th-century contexts and regions like Latin America, the USA, and the UK, revealing that current LLM safeguards fail to generalize in sociopolitical settings and may endanger democratic values and human rights."
+                        ? "Large language models (LLMs) are increasingly used in sensitive sociopolitical contexts, yet existing safety benchmarks overlook evaluating risks like assisting surveillance, political manipulation, and generating disinformation. To counter this, we introduce SocialHarmBench â€“ the first sociopolitical adversarial evaluation benchmark, with 585 prompts across 7 domains and 34 countries. Results show open-weight models are highly vulnerable, exhibiting 97-98% attack success rates in areas such as historical revisionism, propaganda, and political manipulation. Vulnerabilities are greatest in 21st-and pre-20th-century contexts and regions like Latin America, the USA, and the UK, revealing that current LLM safeguards fail to generalize in sociopolitical settings and may endanger democratic values and human rights."
                         : featured.summary}
                     </p>
                     <p className="mt-3 text-sm text-foreground/60">{featured.authors.join(", ")}</p>
@@ -223,7 +223,7 @@ export default function HomePage() {
                       rel="noopener noreferrer"
                       className="mt-3 inline-flex items-center gap-2 rounded-md border border-primary/30 text-primary px-3 py-2 text-sm hover:bg-primary/10"
                     >
-                      Watch on YouTube →
+                      Watch on YouTube 
                     </a>
                   </div>
                 </Reveal>
@@ -241,6 +241,7 @@ export default function HomePage() {
     </>
   );
 }
+
 
 
 

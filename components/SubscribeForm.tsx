@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 
@@ -12,13 +12,12 @@ export default function SubscribeForm({ className }: Props) {
 
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const isValid = /.+@.+\..+/.test(email);
-    if (!isValid) {
-      setStatus("error");
-      return;
+    // Temporary behavior: show a simple popup
+    if (typeof window !== "undefined") {
+      window.alert("Coming soon");
     }
-    // Placeholder success state. Wire to your email service later.
-    setStatus("success");
+    // Keep UI in idle state after alert
+    setStatus("idle");
   };
 
   return (
@@ -47,16 +46,17 @@ export default function SubscribeForm({ className }: Props) {
         </button>
       </div>
       <p className="mt-2 text-xs text-foreground/60">
-        We’ll send occasional updates about research, datasets, and events.
+        We'll send occasional updates about research, datasets, and events.
       </p>
       {status === "error" && (
         <p className="mt-2 text-xs text-red-600">Please enter a valid email.</p>
       )}
       {status === "success" && (
         <p className="mt-2 text-xs text-green-600">
-          Thanks! You’re on the list.
+          Thanks! You're on the list.
         </p>
       )}
     </form>
   );
 }
+

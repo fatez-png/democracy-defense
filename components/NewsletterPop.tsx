@@ -45,9 +45,7 @@ export default function NewsletterPop() {
     <div className="fixed inset-x-0 bottom-0 z-50 px-4 pb-4 sm:px-6 sm:pb-6">
       <div className="mx-auto max-w-3xl rounded-xl border border-black/10 dark:border-white/10 bg-background/95 backdrop-blur p-4 sm:p-5 shadow-lg">
         <div className="flex items-start gap-3">
-          <div className="hidden sm:block h-10 w-10 rounded-full bg-primary/10 text-primary flex items-center justify-center font-semibold">
-            âœ‰ï¸
-          </div>
+      
           <div className="flex-1 min-w-0">
             <h3 className="text-base font-semibold">Subscribe to our newsletter <span className="text-red-500 ml-2" style={{ fontFamily: '"Brush Script MT", "Lucida Handwriting", cursive' }}>coming soon</span></h3>
             <p className="mt-1 text-sm text-foreground/70">
@@ -60,7 +58,7 @@ export default function NewsletterPop() {
             aria-label="Close"
             className="ml-2 text-foreground/60 hover:text-foreground/90 text-lg leading-none"
           >
-            Ã—
+            X
           </button>
         </div>
         <div className="mt-2 text-xs text-foreground/60">

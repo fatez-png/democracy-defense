@@ -34,12 +34,10 @@ export default function HomePage() {
             className="mx-auto mt-3 h-1 w-28 rounded-full bg-gradient-to-r from-transparent via-foreground/40 to-transparent"
           />
           <p className="mt-6 text-lg sm:text-xl text-foreground/80">
-            Research on influence operations, platform dynamics, and civic resilience. Media-friendly,
-            practitioner-ready.
+            Research on detecting democracy-threatening tendencies of AI and Large Language Models (LLMs).
           </p>
           <p className="mt-4 text-foreground/70">
-            Democracy Defense is a research line within the Jinesis AI Lab, advancing rigorous, public-interest
-            evaluations of AI systems in democratic contexts.
+            Democracy Defense is a research line within the <a href="https://zhijing-jin.com/home/" target="_blank" rel="noopener noreferrer" className="font-semibold">Jinesis AI Lab</a>, advancing rigorous, public-interest evaluations of AI systems in democratic contexts.
           </p>
 
           <div className="mt-8 flex items-center justify-center gap-3">
@@ -93,8 +91,8 @@ export default function HomePage() {
                 </Reveal>
                 <Reveal delayMs={100}>
                   <li className="rounded-lg border border-black/10 p-4 hover-lift">
-                    <img src="/ccmoderation.png" alt="Cross-Country Moderation figure" className="w-full h-32 object-cover rounded mb-2" />
-                    Updated: Cross-Country Moderation analysis with expanded explanations - <a className="underline" href="/papers/cross-country-content-moderation-nlp">details</a>
+                    <img src="/authoritarian.jpg" alt="Democratic or Authoritarian paper" className="w-full h-32 object-cover rounded mb-2" />
+                    New paper: Democratic or Authoritarian? Probing a New Dimension of Political Biases in LLMs - <a className="underline" href="/papers/democratic-or-authoritarian-bias-in-llms">read more</a>
                   </li>
                 </Reveal>
               </ul>
@@ -203,7 +201,7 @@ export default function HomePage() {
                   >
                     <iframe
                       className="w-full h-full"
-                      src="https://www.youtube.com/embed/azianl2rR4U?start=81"
+                      src="https://www.youtube.com/embed/NpGpq1WKcuI"
                       title="AI, Safety, and Democratic Resilience"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                       referrerPolicy="strict-origin-when-cross-origin"
@@ -218,7 +216,7 @@ export default function HomePage() {
                       model risks and building civic-minded safeguards.
                     </p>
                     <a
-                      href="https://www.youtube.com/watch?v=azianl2rR4U&t=81s"
+                      href="https://www.youtube.com/watch?v=NpGpq1WKcuI"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="mt-3 inline-flex items-center gap-2 rounded-md border border-primary/30 text-primary px-3 py-2 text-sm hover:bg-primary/10"
@@ -241,6 +239,9 @@ export default function HomePage() {
     </>
   );
 }
+
+
+
 
 
 

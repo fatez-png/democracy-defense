@@ -1,4 +1,4 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 import SubscribeForm from "@/components/SubscribeForm";
 import Reveal from "@/components/Reveal";
 
@@ -117,14 +117,14 @@ export default function AboutPage() {
               { name: "Punya Syon Pandey", src: "/punya.jpg", href: "https://vesaterra.github.io/" },
               { name: "David Guzman", src: "/david.jpeg", href: "https://scholar.google.com/citations?user=2VxJWs4AAAAJ&hl=en" },
               { name: "Keenan Samway", src: "/Keenan%20Samway.jpg", href: "https://www.linkedin.com/in/keenansamway" },
+              { name: "Neemesh Yadav", src: "/Neemesh%20photo.jpg" },
+              { name: "Terrence Zhang", src: "/Terrence.png" },
+              { name: "Francesco Ortu", src: "/francesco.png" },
+              { name: "Irene Strauss", src: "/irene.jpg" },
+              { name: "Joeun Yook", src: "/joeun.png" },
               // Then the rest (no photos yet)
               { name: "David F. Jenny" },
               { name: "Devansh Bhardwaj" },
-              { name: "Francesco Ortu" },
-              { name: "Irene Strauss" },
-              { name: "Joeun Yook" },
-              { name: "Neemesh Yadav" },
-              { name: "Terrence Zhang" },
               { name: "Yann Billeter" },
             ].map((m, i) => (
               <Reveal key={m.name} delayMs={i * 60}>
@@ -189,3 +189,4 @@ export default function AboutPage() {
     </>
   );
 }
+

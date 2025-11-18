@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     template: "%s | Democracy Defense",
   },
   description:
-    "Research on influence operations, platform dynamics, and civic resilience.",
+    "Research on detecting democracy-threatening tendencies of AI and Large Language Models (LLMs).",
 };
 
 export default function RootLayout({
